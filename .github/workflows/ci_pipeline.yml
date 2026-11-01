@@ -1,0 +1,16 @@
+name : CI pipeline 
+
+on:
+  push:
+    branches:
+      -main
+
+jobs:
+  test-script:
+    run-on: ubuntu-latest
+    steps:
+      -name: Checkout repository
+      uses: action/checkout@v4
+
+      -name: Run Build Script
+      run: bash script.sh
